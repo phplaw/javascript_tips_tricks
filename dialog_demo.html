@@ -1,0 +1,69 @@
+<!-- dialog -->
+<div id="dialog-confirm" title="Delete ticket?">
+  <p>
+    <span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>
+    Are you sure you wish to delete this issue?</p>
+</div>
+<script>
+  $(function() {
+    $("#dialog-confirm").dialog({
+      resizable: false,
+      draggable: false,
+      height: 150,
+      width: 400,
+      //http://api.jqueryui.com/position/
+      position: { my: "center top", at: "center top+25%", of: window },
+      modal: true,
+      buttons: {
+        "Delete Ticket": function() {
+          $(this).dialog("close");
+        },
+        Cancel: function() {
+          $(this).dialog("close");
+        }
+      },
+      open: function() {                         // open event handler
+        $(this)                                // the element being dialogged
+            .parent()                          // get the dialog widget element
+            .find(".ui-dialog-titlebar-close") // find the close button for this dialog
+            .hide();                           // hide it
+      }
+    });
+    
+    $(window).resize(function() {
+      $("#dialog-confirm").dialog("option", "position", { my: "center top", at: "center top+25%", of: window });
+//      $("#dialog-confirm").dialog("option", "position", "center");
+    });
+    
+    
+    
+    
+    $("#dialog-confirm").dialog({
+    autoOpen: false,
+    modal: true,
+    height: 160,
+    width: 400,
+    resizable: false,
+    buttons: [
+        {
+            text: 'OK',
+            'class': 'btn btn-danger',
+            click: function() {
+                // Save code here
+            }
+        },
+        {
+            text: 'Cancel',
+            'class': 'btn btn-info',
+            click: function() {
+                // Cancel code here
+                $(this).dialog("close");
+            }
+        }
+        
+    ],
+    close: function() {
+        // Close code here (incidentally, same as Cancel code)
+    }
+});
+</script>
