@@ -36,7 +36,7 @@ foreach ($_POST['item'] as $value) {
     $i++;
 }
 ```
-~Other way~
+~~Other way~~
 ```javascript
 $(function() {
     $( '#sort-list' ).sortable({
@@ -50,3 +50,4 @@ $(function() {
     });
 });
 ```
+http://jsfiddle.net/AJnDR/
