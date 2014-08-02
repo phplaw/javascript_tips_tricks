@@ -36,3 +36,17 @@ foreach ($_POST['item'] as $value) {
     $i++;
 }
 ```
+~~Other way ~~
+```javascript
+$(function() {
+    $( '#sort-list' ).sortable({
+        stop: function () {
+            var inputs = $('input.currentposition');
+            var nbElems = inputs.length;
+            $('input.currentposition').each(function(idx) {
+                $(this).val(nbElems - idx);
+            });
+        }
+    });
+});
+```
