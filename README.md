@@ -36,6 +36,8 @@ $("#search").autocomplete({
  
  server script
  ```php
+<?php
+
  $data = array( 
      "id" => 1, "value" => "Apple" , "data" => "Fresh"
      ,"id" => 2, "value" => "Mango" , "data" => "Rotten"
